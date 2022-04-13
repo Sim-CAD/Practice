@@ -1,3 +1,7 @@
+#include<bits/c++.h>
+#include<vector>
+
+/*Kadane's Algorithm*/
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
