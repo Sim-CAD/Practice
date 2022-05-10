@@ -1,0 +1,30 @@
+   string minRemoveToMakeValid(string s) {
+        stack<int> st;
+        string res;
+        
+        if(s.length() == 0)
+            return NULL;
+        
+        for(int i = 0; i < s.length(); i++){
+            
+            if(s[i] == '(' ){
+                st.push(i);
+            }
+            
+            else if(s[i] == ')'){
+                if(!st.empty() && s[st.top()] == '('){
+                    st.pop();
+                }else{
+                    st.push(i);
+                }
+                
+             }
+        }
+             
+       while(!st.empty()){
+           s.erase(st.top(), 1);
+           st.pop();
+       }
+        return s;
+        
+    }
